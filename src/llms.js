@@ -6,6 +6,9 @@ class GPT {
   generateText(prompt) {
     console.log(`Generating text with ${this.name} model for prompt: ${prompt}`);
     // Implement text generation logic
+    const generatedText = `Generated text for prompt: ${prompt}`;
+    console.log(`Generated text: ${generatedText}`);
+    return generatedText;
   }
 }
 
@@ -17,6 +20,9 @@ class Claude {
   generateText(prompt) {
     console.log(`Generating text with ${this.name} model for prompt: ${prompt}`);
     // Implement text generation logic
+    const generatedText = `Generated text for prompt: ${prompt}`;
+    console.log(`Generated text: ${generatedText}`);
+    return generatedText;
   }
 }
 
@@ -28,6 +34,9 @@ class Gemini {
   generateText(prompt) {
     console.log(`Generating text with ${this.name} model for prompt: ${prompt}`);
     // Implement text generation logic
+    const generatedText = `Generated text for prompt: ${prompt}`;
+    console.log(`Generated text: ${generatedText}`);
+    return generatedText;
   }
 }
 
@@ -39,6 +48,9 @@ class LLaMa {
   generateText(prompt) {
     console.log(`Generating text with ${this.name} model for prompt: ${prompt}`);
     // Implement text generation logic
+    const generatedText = `Generated text for prompt: ${prompt}`;
+    console.log(`Generated text: ${generatedText}`);
+    return generatedText;
   }
 }
 
@@ -50,6 +62,9 @@ class Qwen {
   generateText(prompt) {
     console.log(`Generating text with ${this.name} model for prompt: ${prompt}`);
     // Implement text generation logic
+    const generatedText = `Generated text for prompt: ${prompt}`;
+    console.log(`Generated text: ${generatedText}`);
+    return generatedText;
   }
 }
 
@@ -61,6 +76,9 @@ class Mistral {
   generateText(prompt) {
     console.log(`Generating text with ${this.name} model for prompt: ${prompt}`);
     // Implement text generation logic
+    const generatedText = `Generated text for prompt: ${prompt}`;
+    console.log(`Generated text: ${generatedText}`);
+    return generatedText;
   }
 }
 
