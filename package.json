@@ -25,6 +25,7 @@
     "gemini": "^1.0.0",
     "llama": "^1.0.0",
     "qwen": "^1.0.0",
-    "mistral": "^1.0.0"
+    "mistral": "^1.0.0",
+    "node-schedule": "^2.0.0"
   }
 }
