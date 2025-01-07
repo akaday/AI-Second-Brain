@@ -1,42 +1,48 @@
 const { GPT, Claude, Gemini, LLaMa, Qwen, Mistral } = require('./llms');
 
 class CustomAgent {
-  constructor(name, model) {
+  constructor(name, models) {
     this.name = name;
-    this.model = model;
+    this.models = models;
   }
 
   performTask(task) {
     console.log(`Agent ${this.name} is performing task: ${task}`);
-    // Implement task execution logic using the model
+    try {
+      this.models.forEach(model => {
+        const output = model.generateText(task);
+        console.log(`Output from ${model.name}: ${output}`);
+      });
+    } catch (error) {
+      console.error(`Error performing task with agent ${this.name}:`, error);
+    }
   }
 }
 
-function createAgent(name, modelType) {
-  let model;
-  switch (modelType) {
-    case 'GPT':
-      model = new GPT();
-      break;
-    case 'Claude':
-      model = new Claude();
-      break;
-    case 'Gemini':
-      model = new Gemini();
-      break;
-    case 'LLaMa':
-      model = new LLaMa();
-      break;
-    case 'Qwen':
-      model = new Qwen();
-      break;
-    case 'Mistral':
-      model = new Mistral();
-      break;
-    default:
-      throw new Error('Unsupported model type');
+function createAgent(name, modelTypes) {
+  try {
+    const models = modelTypes.map(modelType => {
+      switch (modelType) {
+        case 'GPT':
+          return new GPT();
+        case 'Claude':
+          return new Claude();
+        case 'Gemini':
+          return new Gemini();
+        case 'LLaMa':
+          return new LLaMa();
+        case 'Qwen':
+          return new Qwen();
+        case 'Mistral':
+          return new Mistral();
+        default:
+          throw new Error('Unsupported model type');
+      }
+    });
+    return new CustomAgent(name, models);
+  } catch (error) {
+    console.error('Error creating agent:', error);
   }
-  return new CustomAgent(name, model);
 }
 
 module.exports = { CustomAgent, createAgent };
